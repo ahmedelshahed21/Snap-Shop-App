@@ -17,6 +17,7 @@ class DataAndImageSection extends StatelessWidget {
     return Row(
       children: [
         Expanded(
+          flex: 11,
           child: DataSection(
             brand: productsModel.brand!,
             priceBeforeDiscount:'${productsModel.price} ${AppStrings.currency}',
@@ -28,8 +29,10 @@ class DataAndImageSection extends StatelessWidget {
           ),
         ),
         Expanded(
+          flex: 10,
           child: ImageAndNameSection(
             image: productsModel.image,
+            images: productsModel.images,
             title: productsModel.title,
           ),
         ),

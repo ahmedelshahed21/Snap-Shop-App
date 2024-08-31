@@ -28,27 +28,38 @@ class ProductView extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 12.0, left: 12.0, right: 12.0,bottom: 0),
+          padding: const EdgeInsets.only(
+              top: 12.0, left: 12.0, right: 12.0, bottom: 0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               DataAndImageSection(productsModel: productsModel),
-              const SizedBox(height: 30),
-              DescriptionSection(description: productsModel.description,),
+              const SizedBox(height: 20),
+              ProductDataWidget(
+                  name: 'Return Policy',
+                  productData: productsModel.returnPolicy),
+              const SizedBox(height: 20),
+              DescriptionSection(
+                description: productsModel.description,
+              ),
               const SizedBox(height: 10),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  ProductDataWidget(name: '', productData: productsModel.returnPolicy),
-                  ProductDataWidget(name: 'Rating', productData: productsModel.rating.toString()),
+                  ProductDataWidget(
+                      name: '', productData: productsModel.shippingInformation),
+                  ProductDataWidget(
+                      name: 'Rating',
+                      productData: productsModel.rating.toString()),
                 ],
               ),
-              const SizedBox(height: 100),
+              const SizedBox(height: 40),
               Padding(
                 padding: const EdgeInsets.only(bottom: 50.0),
                 child: ReviewsSection(productsModel: productsModel),
               ),
               TagsSection(tags: productsModel.tags),
-              const SizedBox(height: 10),
+              const SizedBox(height: 20),
             ],
           ),
         ),
@@ -56,7 +67,3 @@ class ProductView extends StatelessWidget {
     );
   }
 }
-
-
-
-
