@@ -4,10 +4,13 @@ import 'package:snap_shop/core/theme/app_styles.dart';
 import 'package:snap_shop/features/home/data/models/products_model.dart';
 import 'package:snap_shop/features/home/presentation/widgets/description_section.dart';
 import 'package:snap_shop/features/home/presentation/widgets/DataAndImageSection.dart';
+import 'package:snap_shop/features/home/presentation/widgets/product_data_widget.dart';
+import 'package:snap_shop/features/home/presentation/widgets/reviews_section.dart';
 import 'package:snap_shop/features/home/presentation/widgets/tags_section.dart';
 
 class ProductView extends StatelessWidget {
   const ProductView({super.key, required this.productsModel});
+
   final ProductsModel productsModel;
 
   @override
@@ -23,27 +26,36 @@ class ProductView extends StatelessWidget {
           style: AppStyles.styleMedium12(context).copyWith(fontSize: 18),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 24.0,horizontal: 8.0),
-        child: Column(
-          children: [
-            Expanded(child: DataAndImageSection(productsModel: productsModel)),
-            const SizedBox(height: 30),
-            DescriptionSection(description: productsModel.description,),
-            const Spacer(),
-            TagsSection(tags: productsModel.tags),
-          ],
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 12.0, left: 12.0, right: 12.0,bottom: 0),
+          child: Column(
+            children: [
+              DataAndImageSection(productsModel: productsModel),
+              const SizedBox(height: 30),
+              DescriptionSection(description: productsModel.description,),
+              const SizedBox(height: 10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  ProductDataWidget(name: '', productData: productsModel.returnPolicy),
+                  ProductDataWidget(name: 'Rating', productData: productsModel.rating.toString()),
+                ],
+              ),
+              const SizedBox(height: 100),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 50.0),
+                child: ReviewsSection(productsModel: productsModel),
+              ),
+              TagsSection(tags: productsModel.tags),
+              const SizedBox(height: 10),
+            ],
+          ),
         ),
       ),
     );
   }
 }
-
-
-
-
-
-
 
 
 

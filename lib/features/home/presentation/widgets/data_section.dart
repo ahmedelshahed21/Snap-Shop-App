@@ -26,18 +26,22 @@ class DataSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        const SizedBox(height: 10,),
         brand == ''
             ? const SizedBox.shrink()
             : ProductDataWidget(name: 'Brand', productData: brand),
+        const SizedBox(height: 20),
         PriceDetailsSection(
             priceBeforeDiscount: priceBeforeDiscount,
             price: price,
             discountPercentage: discountPercentage),
+        const SizedBox(height: 20,),
         ProductDataWidget(productData: warrantyInformation),
+        const SizedBox(height: 20,),
         AvailabilityStatusSection(availabilityStatus: availabilityStatus,stock: stock),
+        const SizedBox(height: 10,),
       ],
     );
   }

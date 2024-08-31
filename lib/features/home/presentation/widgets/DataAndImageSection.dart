@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:snap_shop/core/constants/app_strings.dart';
 import 'package:snap_shop/features/home/data/models/products_model.dart';
 import 'package:snap_shop/features/home/presentation/widgets/data_section.dart';
-import 'package:snap_shop/features/home/presentation/widgets/image_and_name_product_section.dart';
+import 'package:snap_shop/features/home/presentation/widgets/image_and_name_section.dart';
 
 class DataAndImageSection extends StatelessWidget {
   const DataAndImageSection({
@@ -22,9 +22,9 @@ class DataAndImageSection extends StatelessWidget {
             priceBeforeDiscount:'${productsModel.price} ${AppStrings.currency}',
             price: '${AppStrings.currency} ${(productsModel.price - (productsModel.price * productsModel.discountPercentage / 100)).toStringAsFixed(2)}',
             discountPercentage: '${productsModel.discountPercentage} %',
-            warrantyInformation: productsModel.warrantyInformation!,
-            availabilityStatus: productsModel.availabilityStatus!,
-            stock: productsModel.stock!,
+            warrantyInformation: productsModel.warrantyInformation,
+            availabilityStatus: productsModel.availabilityStatus,
+            stock: productsModel.stock,
           ),
         ),
         Expanded(
