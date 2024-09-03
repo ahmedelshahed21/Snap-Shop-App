@@ -23,24 +23,18 @@ void showImageDialog(BuildContext context, List<String> images, int initialIndex
             children: [
               Expanded(
                 child: PageView.builder(
-                  controller: PageController(initialPage: initialIndex),
                   itemCount: images.length,
                   onPageChanged: (index) {
                     currentIndex.value = index;
                   },
                   itemBuilder: (context, index) {
-                    return GestureDetector(
-                      onTap: () {
-                        Navigator.of(context).pop();
-                      },
-                      child: ClipRRect(
-                        borderRadius: BorderRadius.circular(12),
-                        child: CachedNetworkImage(
-                          imageUrl: images[index],
-                          fit: BoxFit.contain,
-                          placeholder: (context, url) => const ImageLoadingEffect(),
-                          errorWidget: (context, url, error) => const Icon(Icons.error),
-                        ),
+                    return ClipRRect(
+                      borderRadius: BorderRadius.circular(12),
+                      child: CachedNetworkImage(
+                        imageUrl: images[index],
+                        fit: BoxFit.contain,
+                        placeholder: (context, url) => const ImageLoadingEffect(),
+                        errorWidget: (context, url, error) => const Icon(Icons.error),
                       ),
                     );
                   },

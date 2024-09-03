@@ -1,4 +1,5 @@
 class ProductsModel {
+  int id;
   final String image;
   final List<String> images;
   final String title;
@@ -17,6 +18,7 @@ class ProductsModel {
   final List<ReviewModel> reviews;  // New field for reviews
 
   ProductsModel({
+    required this.id,
     required this.image,
     required this.images,
     required this.title,
@@ -37,6 +39,7 @@ class ProductsModel {
 
   factory ProductsModel.fromjson(Map<String, dynamic> json) {
     return ProductsModel(
+      id: json['id'],
       image: json['thumbnail'] ?? '',
       title: json['title'],
       description: json['description'],

@@ -21,21 +21,21 @@ class ImageAndNameSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 170 / 240,
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 4.0),
-        decoration: ShapeDecoration(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-            side: const BorderSide(width: 1.2, color: AppColors.kBorderColor),
+      child: GestureDetector(
+        onTap: (){
+          showImageDialog(context, images, images.indexOf(image));
+        },
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 4.0),
+          decoration: ShapeDecoration(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(12),
+              side: const BorderSide(width: 1.2, color: AppColors.kBorderColor),
+            ),
           ),
-        ),
-        child: Column(
-          children: [
-            GestureDetector(
-              onTap: () {
-                showImageDialog(context, images, images.indexOf(image));
-              },
-              child: ClipRRect(
+          child: Column(
+            children: [
+              ClipRRect(
                 borderRadius: BorderRadius.circular(8),
                 child: CachedNetworkImage(
                   imageUrl: image,
@@ -44,15 +44,15 @@ class ImageAndNameSection extends StatelessWidget {
                   errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
               ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              title,
-              textAlign: TextAlign.center,
-              style: AppStyles.styleMedium12(context)
-                  .copyWith(color: AppColors.kPriceColor, fontSize: 14),
-            ),
-          ],
+              const SizedBox(height: 8),
+              Text(
+                title,
+                textAlign: TextAlign.center,
+                style: AppStyles.styleMedium12(context)
+                    .copyWith(color: AppColors.kPriceColor, fontSize: 14),
+              ),
+            ],
+          ),
         ),
       ),
     );

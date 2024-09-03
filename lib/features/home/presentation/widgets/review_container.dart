@@ -45,7 +45,7 @@ class ReviewContainer extends StatelessWidget {
                 width: 10,
               ),
               Text(
-                '@ $reviewerEmail',
+                reviewerEmail,
                 textAlign: TextAlign.end,
                 style: AppStyles.styleMedium12(context)
                     .copyWith(

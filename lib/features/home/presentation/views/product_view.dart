@@ -23,7 +23,7 @@ class ProductView extends StatelessWidget {
         centerTitle: true,
         title: Text(
           'Details',
-          style: AppStyles.styleMedium12(context).copyWith(fontSize: 18),
+          style: AppStyles.styleMedium18(context),
         ),
       ),
       body: SingleChildScrollView(

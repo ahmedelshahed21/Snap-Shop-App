@@ -1,58 +1,47 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:shimmer/shimmer.dart';
 import 'package:snap_shop/core/theme/app_colors.dart';
-import 'package:snap_shop/features/home/presentation/widgets/image_loading_effect.dart';
+import 'package:snap_shop/features/home/data/models/products_model.dart';
+import 'package:snap_shop/features/home/presentation/widgets/product_small_image.dart';
 
-class ImageSection extends StatelessWidget {
-  const ImageSection({
-    super.key,
-    required this.height,
-    required this.width,
-    this.image,
-  });
+Set<ProductsModel> favoriteProducts = {};
 
-  final double height;
-  final double width;
-  final String? image;
+class ImageSection extends StatefulWidget {
+  const ImageSection({super.key, required this.productsModel});
+
+  final ProductsModel productsModel;
+
+  @override
+  State<ImageSection> createState() => _ImageSectionState();
+}
+
+class _ImageSectionState extends State<ImageSection> {
+  bool isSelected = true;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        ClipRRect(
-          borderRadius: const BorderRadius.only(
-            topRight: Radius.circular(12),
-            topLeft: Radius.circular(12),
-            bottomRight: Radius.zero,
-            bottomLeft: Radius.zero,
-          ),
-          child: CachedNetworkImage(
-            imageUrl: image ?? '',
-            fit: BoxFit.fill,
-            height: height * 0.5,
-            width: width,
-            placeholder: (context, url) => Shimmer.fromColors(
-                baseColor: Colors.grey.shade200,
-                highlightColor: AppColors.kBackGroundColor,
-                child: const ImageLoadingEffect(),
-            ),
-            errorWidget: (context, url, error) => const Icon(Icons.error),
-          ),
-        ),
+        ProductSmallImage(image: widget.productsModel.image),
         Positioned(
-          top: 6,
-          right: 6,
-          child: Container(
-            padding: const EdgeInsets.all(4),
-            decoration: const ShapeDecoration(
-              color: AppColors.kBackGroundColor,
-              shape: OvalBorder(),
-            ),
-            child: const Icon(
-              FontAwesomeIcons.heart,
-              color: AppColors.kPrimaryColor,
+          top: -6,
+          right: -2,
+          child: IconButton(
+            isSelected: isSelected,
+            color: AppColors.kPrimaryColor,
+            selectedIcon: const Icon(FontAwesomeIcons.heart),
+            onPressed: () {
+              isSelected
+                  ? favoriteProducts.add(widget.productsModel)
+                  : favoriteProducts.remove(widget.productsModel);
+              setState(() {
+                isSelected = !isSelected;
+              });
+            },
+            icon: const Icon(
+              Icons.favorite_rounded,
+              color: Colors.red,
+              size: 28,
             ),
           ),
         ),
@@ -60,5 +49,3 @@ class ImageSection extends StatelessWidget {
     );
   }
 }
-
-
