@@ -3,7 +3,7 @@ import 'package:snap_shop/core/theme/app_colors.dart';
 import 'package:snap_shop/core/theme/app_styles.dart';
 import 'package:snap_shop/features/home/data/models/products_model.dart';
 import 'package:snap_shop/features/home/presentation/widgets/description_section.dart';
-import 'package:snap_shop/features/home/presentation/widgets/DataAndImageSection.dart';
+import 'package:snap_shop/features/home/presentation/widgets/data_and_image_section.dart';
 import 'package:snap_shop/features/home/presentation/widgets/product_data_widget.dart';
 import 'package:snap_shop/features/home/presentation/widgets/reviews_section.dart';
 import 'package:snap_shop/features/home/presentation/widgets/tags_section.dart';
@@ -28,8 +28,7 @@ class ProductView extends StatelessWidget {
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(
-              top: 12.0, left: 12.0, right: 12.0, bottom: 0),
+          padding: const EdgeInsets.only(top: 12.0, left: 12.0, right: 12.0, bottom: 0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

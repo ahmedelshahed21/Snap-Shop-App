@@ -15,19 +15,16 @@ class EmptyFavoritesView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // Icon or Illustration
             Icon(
               Icons.favorite_border,
               size: 100,
-              color: AppColors.kGreyColor, // Or your primary color
+              color: AppColors.kGreyColor,
             ),
             const SizedBox(height: 20),
             Text(
               "No favorites yet!",
-              style: AppStyles.styleMedium14(context).copyWith(
-                  color: Colors.grey.shade700,
-                  fontSize: 24
-              ),
+              style: AppStyles.styleMedium14(context)
+                  .copyWith(color: Colors.grey.shade700, fontSize: 24),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 10),
@@ -44,7 +41,8 @@ class EmptyFavoritesView extends StatelessWidget {
                 GoRouter.of(context).pop();
               },
               style: ElevatedButton.styleFrom(
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
@@ -52,7 +50,8 @@ class EmptyFavoritesView extends StatelessWidget {
               ),
               child: Text(
                 "Start Shopping",
-                style: AppStyles.styleMedium18(context).copyWith(color: AppColors.kPriceColor),
+                style: AppStyles.styleMedium18(context)
+                    .copyWith(color: AppColors.kPriceColor),
               ),
             ),
           ],

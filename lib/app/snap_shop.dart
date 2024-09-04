@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:snap_shop/core/utils/app_router.dart';
+import 'package:snap_shop/core/routing/app_router.dart';
 
 class SnapShop extends StatelessWidget {
   const SnapShop({super.key});

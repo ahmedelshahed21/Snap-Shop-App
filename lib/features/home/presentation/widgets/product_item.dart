@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:snap_shop/core/theme/app_colors.dart';
-import 'package:snap_shop/core/utils/app_router.dart';
+import 'package:snap_shop/core/routing/app_router.dart';
 import 'package:snap_shop/features/home/data/models/products_model.dart';
-import 'package:snap_shop/features/home/presentation/widgets/image_section.dart';
+import 'package:snap_shop/core/widgets/image_section.dart';
 import 'package:snap_shop/features/home/presentation/widgets/price_and_discount_section.dart';
 import 'package:snap_shop/features/home/presentation/widgets/review_and_add_section.dart';
 import 'package:snap_shop/features/home/presentation/widgets/title_and_description_section.dart';

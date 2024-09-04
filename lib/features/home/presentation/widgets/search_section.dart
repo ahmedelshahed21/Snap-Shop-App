@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:snap_shop/core/constants/app_assets.dart';
 import 'package:snap_shop/core/constants/app_strings.dart';
 import 'package:snap_shop/core/theme/app_colors.dart';
-import 'package:snap_shop/core/utils/widgets/custom_text_form_field.dart';
+import 'package:snap_shop/core/widgets/custom_text_form_field.dart';
 
 
 class SearchSection extends StatelessWidget {

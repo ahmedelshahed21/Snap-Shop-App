@@ -1,5 +1,5 @@
 class ProductsModel {
-  int id;
+  final int id;
   final String image;
   final List<String> images;
   final String title;

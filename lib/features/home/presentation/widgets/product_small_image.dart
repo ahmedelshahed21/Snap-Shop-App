@@ -8,23 +8,31 @@ class ProductSmallImage extends StatelessWidget {
   const ProductSmallImage({
     super.key,
     required this.image,
+    this.topRight,
+    this.topLeft,
+    this.bottomRight,
+    this.bottomLeft
   });
 
   final String image;
+  final Radius? topRight;
+  final Radius? topLeft;
+  final Radius? bottomRight;
+  final Radius? bottomLeft;
 
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
-      borderRadius: const BorderRadius.only(
-        topRight: Radius.circular(12),
-        topLeft: Radius.circular(12),
-        bottomRight: Radius.zero,
-        bottomLeft: Radius.zero,
+      borderRadius: BorderRadius.only(
+        topRight: topRight ?? const Radius.circular(12),
+        topLeft: topLeft ?? const Radius.circular(12),
+        bottomRight:bottomRight ?? Radius.zero,
+        bottomLeft:bottomLeft ?? Radius.zero,
       ),
       child: CachedNetworkImage(
         imageUrl: image,
         fit: BoxFit.fill,
-        // height: height * 0.5,
+        height: double.infinity,
         width:  double.infinity,
         placeholder: (context, url) => Shimmer.fromColors(
           baseColor: Colors.grey.shade200,

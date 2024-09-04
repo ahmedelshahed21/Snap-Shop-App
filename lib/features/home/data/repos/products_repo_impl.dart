@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:dartz/dartz.dart';
-import 'package:snap_shop/core/errors/failure.dart';
+import 'package:snap_shop/core/utils/errors/failure.dart';
 import 'package:snap_shop/core/utils/api_service.dart';
 import 'package:snap_shop/features/home/data/models/products_model.dart';
 import 'package:snap_shop/features/home/data/repos/products_repo.dart';

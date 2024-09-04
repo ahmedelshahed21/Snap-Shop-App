@@ -15,7 +15,7 @@ class TitleAndDescriptionSection extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(title??'No Title',
-            style: AppStyles.styleMedium13(context),
+            style: AppStyles.styleMedium13(context).copyWith(),
             overflow: TextOverflow.ellipsis,
           ),
           Text(description?? '',
