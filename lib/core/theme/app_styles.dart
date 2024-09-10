@@ -6,6 +6,16 @@ import 'package:snap_shop/core/theme/app_colors.dart';
 
 abstract class AppStyles {
 
+  static TextStyle styleMedium24(BuildContext context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(context, fontSize: 24),
+      fontFamily: AppConstants.montserratFont,
+      fontWeight: FontWeight.w500,
+      color: AppColors.kPrimaryColor,
+    );
+  }
+
+
   static TextStyle styleMedium20(BuildContext context) {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 20),
@@ -21,6 +31,15 @@ abstract class AppStyles {
       fontFamily: AppConstants.montserratFont,
       fontWeight: FontWeight.w600,
       color: AppColors.kPrimaryColor,
+    );
+  }
+
+  static TextStyle styleMedium16(BuildContext context) {
+    return TextStyle(
+      fontSize: getResponsiveFontSize(context, fontSize: 16),
+      fontFamily: AppConstants.montserratFont,
+      fontWeight: FontWeight.w600,
+      color: AppColors.kBlackColor,
     );
   }
 
