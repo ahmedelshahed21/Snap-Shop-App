@@ -18,6 +18,7 @@ class DrawerCard extends StatelessWidget {
       elevation: 0,
       margin: const EdgeInsets.only(left: 6.0, right: 8.0),
       child: ListTile(
+        dense: true,
         onTap: onTap,
         leading: Icon(icon,
             color: AppColors.kPrimaryColor, size: 28),

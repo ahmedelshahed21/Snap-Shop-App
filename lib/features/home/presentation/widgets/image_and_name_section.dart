@@ -26,7 +26,7 @@ class ImageAndNameSection extends StatelessWidget {
           showImageDialog(context, images, images.indexOf(image));
         },
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 4.0),
+          // padding: const EdgeInsets.symmetric(horizontal: 4.0),
           decoration: ShapeDecoration(
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(12),
@@ -36,21 +36,22 @@ class ImageAndNameSection extends StatelessWidget {
           child: Column(
             children: [
               ClipRRect(
-                borderRadius: BorderRadius.circular(8),
+                borderRadius: const BorderRadius.only(topLeft: Radius.circular(12),topRight: Radius.circular(12)),
                 child: CachedNetworkImage(
                   imageUrl: image,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill,
                   placeholder: (context, url) => const ImageLoadingEffect(),
                   errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
               ),
-              const SizedBox(height: 8),
+              const Spacer(),
               Text(
                 title,
                 textAlign: TextAlign.center,
                 style: AppStyles.styleMedium12(context)
                     .copyWith(color: AppColors.kPriceColor, fontSize: 14),
               ),
+              const Spacer(),
             ],
           ),
         ),
