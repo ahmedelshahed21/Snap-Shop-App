@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:snap_shop/app/snap_shop.dart';
 import 'package:snap_shop/core/constants/app_constants.dart';
 import 'package:snap_shop/core/theme/app_colors.dart';
 
@@ -9,7 +10,7 @@ abstract class AppStyles {
   static TextStyle styleMedium24(BuildContext context) {
     return TextStyle(
       fontSize: getResponsiveFontSize(context, fontSize: 24),
-      fontFamily: AppConstants.montserratFont,
+      fontFamily: isArabic()?AppConstants.arabicFont:AppConstants.montserratFont,
       fontWeight: FontWeight.w500,
       color: AppColors.kPrimaryColor,
     );
@@ -19,7 +20,7 @@ abstract class AppStyles {
   static TextStyle styleMedium20(BuildContext context) {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 20),
-        fontFamily: AppConstants.montserratFont,
+        fontFamily: isArabic()?AppConstants.arabicFont:AppConstants.montserratFont,
         fontWeight: FontWeight.w500,
         color: AppColors.kPrimaryColor,
     );
@@ -28,7 +29,7 @@ abstract class AppStyles {
   static TextStyle styleMedium18(BuildContext context) {
     return TextStyle(
       fontSize: getResponsiveFontSize(context, fontSize: 18),
-      fontFamily: AppConstants.montserratFont,
+      fontFamily: isArabic()?AppConstants.arabicFont:AppConstants.montserratFont,
       fontWeight: FontWeight.w600,
       color: AppColors.kPrimaryColor,
     );
@@ -37,7 +38,7 @@ abstract class AppStyles {
   static TextStyle styleMedium16(BuildContext context) {
     return TextStyle(
       fontSize: getResponsiveFontSize(context, fontSize: 16),
-      fontFamily: AppConstants.montserratFont,
+      fontFamily: isArabic()?AppConstants.arabicFont:AppConstants.montserratFont,
       fontWeight: FontWeight.w600,
       color: AppColors.kBlackColor,
     );
@@ -48,7 +49,7 @@ abstract class AppStyles {
       fontSize: getResponsiveFontSize(context, fontSize: 14),
       fontWeight: FontWeight.w500,
       color: AppColors.kPriceColor,
-      fontFamily: AppConstants.montserratFont,
+      fontFamily: isArabic()?AppConstants.arabicFont:AppConstants.montserratFont,
     );
   }
 
@@ -64,7 +65,7 @@ abstract class AppStyles {
     return TextStyle(
       fontSize: getResponsiveFontSize(context, fontSize: 12),
       fontWeight: FontWeight.w500,
-      fontFamily: AppConstants.montserratFont,
+      fontFamily: isArabic()?AppConstants.arabicFont:AppConstants.montserratFont,
     );
   }
 

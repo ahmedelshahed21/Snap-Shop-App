@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:snap_shop/core/config/routing/app_router.dart';
 import 'package:snap_shop/core/constants/app_assets.dart';
 import 'package:snap_shop/core/theme/app_colors.dart';
-import 'package:snap_shop/core/routing/app_router.dart';
+
 
 
 class SplashView extends StatefulWidget{

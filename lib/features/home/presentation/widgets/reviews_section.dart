@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:snap_shop/core/config/localization/generated/l10n.dart';
 import 'package:snap_shop/features/home/data/models/products_model.dart';
 import 'package:snap_shop/features/home/presentation/widgets/custom_expansion_tile.dart';
 import 'package:snap_shop/features/home/presentation/widgets/review_container.dart';
+
 
 class ReviewsSection extends StatelessWidget {
   const ReviewsSection({
@@ -14,7 +16,7 @@ class ReviewsSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomExpansionTile(
-      title: 'Show Reviews',
+      title: S.of(context).showReviews,
       children: ListView.separated(
         itemCount: productsModel.reviews.length,
         shrinkWrap: true,

@@ -18,17 +18,17 @@ class ProductNameAndPriceDetails extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
           color: AppColors.kGreyColor,
-          borderRadius: const BorderRadius.only(topLeft: Radius.circular(12),bottomLeft: Radius.circular(12))
+          borderRadius:
+          const BorderRadius.only(topLeft: Radius.circular(12),bottomLeft: Radius.circular(12))
       ),
       child: Padding(
-        padding: const EdgeInsets.only(left: 8.0),
+        padding:  const EdgeInsets.only(left: 8.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(productsModel.title,
-              style: AppStyles.styleMedium14(context).copyWith(
-              ),
+              style: AppStyles.styleMedium14(context),
             ),
             const Divider(
               height: 0.5,

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:snap_shop/core/config/localization/generated/l10n.dart';
 import 'package:snap_shop/core/theme/app_colors.dart';
 import 'package:snap_shop/core/theme/app_styles.dart';
+
 
 class EmptyFavoritesView extends StatelessWidget {
   const EmptyFavoritesView({super.key});
@@ -22,14 +24,14 @@ class EmptyFavoritesView extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Text(
-              "No favorites yet!",
+              S.of(context).noFavouriteYet,
               style: AppStyles.styleMedium14(context)
                   .copyWith(color: Colors.grey.shade700, fontSize: 24),
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 10),
             Text(
-              "Your favorite products will appear here.",
+              S.of(context).favouriteAppearHere,
               style: AppStyles.styleMedium14(context).copyWith(
                 color: Colors.grey.shade700,
               ),
@@ -46,12 +48,12 @@ class EmptyFavoritesView extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(8),
                 ),
-                backgroundColor: Colors.blue, // Customize button color
+                backgroundColor: Colors.blue,
               ),
               child: Text(
-                "Start Shopping",
+                  S.of(context).startShopping,
                 style: AppStyles.styleMedium18(context)
-                    .copyWith(color: AppColors.kPriceColor),
+                    .copyWith(color: AppColors.kBackGroundColor),
               ),
             ),
           ],

@@ -1,0 +1,13 @@
+{
+    'searchHintText':'what do you search for?',
+    'contactUs':'Contact Us',
+    'favouriteProducts':'Favourite Products',
+    'currency':'EGP',
+    'showReviews':"Show Reviews",
+    'details':"Details",
+    'noFavouriteYet':"No favorites yet!",
+    'favouriteAppearHere':"Your favorite products will appear here."
+    "startShopping":'Start Shopping',
+    "ahmedElShahed":"Ahmed El-Shahed",
+    "changeLanguage":"Change Language",
+}

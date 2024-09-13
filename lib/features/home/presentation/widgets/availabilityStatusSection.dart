@@ -15,6 +15,7 @@ class AvailabilityStatusSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Text(availabilityStatus,
           style: AppStyles.styleMedium12(context).copyWith(

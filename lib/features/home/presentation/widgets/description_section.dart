@@ -19,8 +19,7 @@ class DescriptionSection extends StatelessWidget {
           borderRadius: BorderRadius.circular(12)),
       child: Text(
         description,
-        style: AppStyles.styleMedium12(context)
-            .copyWith(color: AppColors.kPriceColor),
+        style: AppStyles.styleMedium12(context).copyWith(color: AppColors.kPriceColor),
       ),
     );
   }

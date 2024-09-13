@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:snap_shop/core/config/routing/app_router.dart';
 import 'package:snap_shop/core/theme/app_colors.dart';
-import 'package:snap_shop/core/routing/app_router.dart';
 import 'package:snap_shop/features/favourite_products/presentation/widgets/product_name_and_price_details.dart';
 import 'package:snap_shop/features/home/data/models/products_model.dart';
 import 'package:snap_shop/features/home/presentation/widgets/product_small_image.dart';
@@ -19,33 +19,36 @@ class FavouriteProductItem extends StatelessWidget {
       onTap: () {
         GoRouter.of(context).push(AppRouter.kProductView, extra: productsModel);
       },
-      child: Container(
-        height: height,
-        width: width,
-        decoration: ShapeDecoration(
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(14),
-              side: const BorderSide(
-                width: 1.5,
-                color: AppColors.kPrimaryColor,
-              ),
+      child: Directionality(
+        textDirection: TextDirection.ltr,
+        child: Container(
+          height: height,
+          width: width,
+          decoration: ShapeDecoration(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(14),
+                side: const BorderSide(
+                  width: 1.5,
+                  color: AppColors.kPrimaryColor,
+                ),
+            ),
           ),
-        ),
-        child: Row(
-          children: [
-            Expanded(
-              flex: 5,
-              child: ProductNameAndPriceDetails(productsModel: productsModel),
-            ),
-            Expanded(
-              flex: 4,
-              child: ProductSmallImage(
-                image: productsModel.image,
-                bottomRight: const Radius.circular(12),
-                topLeft: Radius.zero,
+          child: Row(
+            children: [
+              Expanded(
+                flex: 5,
+                child: ProductNameAndPriceDetails(productsModel: productsModel),
               ),
-            ),
-          ],
+              Expanded(
+                flex: 4,
+                child: ProductSmallImage(
+                  image: productsModel.image,
+                  bottomRight: const Radius.circular(12),
+                  topLeft: Radius.zero,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

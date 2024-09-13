@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:snap_shop/core/constants/app_strings.dart';
 import 'package:snap_shop/features/home/presentation/widgets/availabilityStatusSection.dart';
 import 'package:snap_shop/features/home/presentation/widgets/price_details_section.dart';
 import 'package:snap_shop/features/home/presentation/widgets/product_data_widget.dart';
@@ -31,7 +32,7 @@ class DataSection extends StatelessWidget {
         const SizedBox(height: 10,),
         brand == ''
             ? const SizedBox.shrink()
-            : ProductDataWidget(name: 'Brand', productData: brand),
+            : ProductDataWidget(name: AppStrings.brand, productData: brand),
         const SizedBox(height: 20),
         PriceDetailsSection(
             priceBeforeDiscount: priceBeforeDiscount,

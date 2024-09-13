@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:snap_shop/core/config/routing/app_router.dart';
 import 'package:snap_shop/core/theme/app_colors.dart';
-import 'package:snap_shop/core/routing/app_router.dart';
 import 'package:snap_shop/features/home/data/models/products_model.dart';
 import 'package:snap_shop/core/widgets/image_section.dart';
 import 'package:snap_shop/features/home/presentation/widgets/price_and_discount_section.dart';
@@ -37,23 +37,26 @@ class ProductItem extends StatelessWidget {
           children: [
             Expanded(child: ImageSection(productsModel: productsModel)),
             Expanded(
-              child: Column(
-                children: [
-                  const SizedBox(height: 8),
-                  TitleAndDescriptionSection(
-                    title: productsModel.title,
-                    description: productsModel.description,
-                  ),
-                  const SizedBox(height: 8),
-                  PriceAndPriceBeforeDiscountSection(
-                    price: productsModel.price,
-                    discountPercentage: productsModel.discountPercentage,
-                  ),
-                  const SizedBox(height: 8),
-                  ReviewAndAddSection(
-                    rating: productsModel.rating,
-                  )
-                ],
+              child: Directionality(
+                textDirection: TextDirection.ltr,
+                child: Column(
+                  children: [
+                    const SizedBox(height: 8),
+                    TitleAndDescriptionSection(
+                      title: productsModel.title,
+                      description: productsModel.description,
+                    ),
+                    const SizedBox(height: 8),
+                    PriceAndPriceBeforeDiscountSection(
+                      price: productsModel.price,
+                      discountPercentage: productsModel.discountPercentage,
+                    ),
+                    const SizedBox(height: 8),
+                    ReviewAndAddSection(
+                      rating: productsModel.rating,
+                    )
+                  ],
+                ),
               ),
             )
           ],

@@ -16,52 +16,40 @@ class ReviewContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: const EdgeInsets.symmetric(horizontal: 4.0, vertical: 8.0),
-      decoration: ShapeDecoration(
-          shape: RoundedRectangleBorder(
-            side: const BorderSide(
-                color: AppColors.kBorderColor,
-                width: 1.2
+    return Directionality(
+      textDirection: TextDirection.ltr,
+      child: Container(
+        width: double.infinity,
+        padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 4.0),
+        decoration: ShapeDecoration(
+            shape: RoundedRectangleBorder(
+              side: const BorderSide(
+                  color: AppColors.kBorderColor,
+                  width: 1
+              ),
+              borderRadius: BorderRadius.circular(12),
             ),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          color: AppColors.kBackGroundColor),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text(reviewerName,
-                style: AppStyles.styleMedium12(context)
-                    .copyWith(
-                    fontWeight: FontWeight.w900,
-                    color: AppColors.kBlackColor),
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              Text(
-                reviewerEmail,
-                textAlign: TextAlign.end,
-                style: AppStyles.styleMedium12(context)
-                    .copyWith(
-                    fontSize: 9,
-                    color: AppColors.kBlackColor),
-              ),
-            ],
-          ),
-          const SizedBox(
-            height: 5,
-          ),
-          Text(reviewerComment,
-            style: AppStyles.styleMedium12(context)
-                .copyWith(color: AppColors.kPrimaryColor),
-          ),
-        ],
+            color: AppColors.kBackGroundColor),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(reviewerName,
+              style: AppStyles.styleMedium14(context).copyWith(fontWeight: FontWeight.w900,color: AppColors.kBlackColor),
+            ),
+            Text(
+              reviewerEmail,
+              textAlign: TextAlign.end,
+              style: AppStyles.styleMedium12(context).copyWith(fontSize: 10,color: AppColors.kBlackColor),
+            ),
+            const SizedBox(
+              height: 4.0,
+            ),
+            Text(reviewerComment,
+              style: AppStyles.styleMedium14(context).copyWith(color: AppColors.kPrimaryColor),
+            ),
+          ],
+        ),
       ),
     );
   }
