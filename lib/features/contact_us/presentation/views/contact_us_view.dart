@@ -3,12 +3,16 @@ import 'package:snap_shop/core/config/localization/generated/l10n.dart';
 import 'package:snap_shop/core/constants/app_assets.dart';
 import 'package:snap_shop/core/theme/app_colors.dart';
 import 'package:snap_shop/core/theme/app_styles.dart';
+import 'package:snap_shop/core/utils/helpers/clipboard_type.dart';
+import 'package:snap_shop/core/utils/helpers/copy_to_clipboard.dart';
+import 'package:snap_shop/core/utils/helpers/open_whats_app.dart';
 import 'package:snap_shop/features/contact_us/presentation/widgets/profile_card.dart';
 
 
-
-class ContactUsView extends StatelessWidget{
+class ContactUsView extends StatelessWidget {
   const ContactUsView({super.key});
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -21,28 +25,32 @@ class ContactUsView extends StatelessWidget{
           const CircleAvatar(
             backgroundImage: AssetImage(AppAssets.profile),
             radius: 70,
-          ) ,
+          ),
           const SizedBox(height: 24),
-          Text(S.of(context).ahmedElShahed,
+          Text(
+            S.of(context).ahmedElShahed,
             style: AppStyles.styleMedium24(context),
           ),
           const SizedBox(height: 6),
-          Text("Flutter Developer",
+          Text(
+            "Flutter Developer",
             style: AppStyles.styleMedium16(context),
           ),
           const SizedBox(height: 12),
-          const ProfileCard(
+          ProfileCard(
             icon: Icons.phone,
             title: '+20 (01068192572)',
+            onTap: () => openWhatsApp('201068192572'),
+            onLongPress: ()=>copyToClipboard(context,"01068192572",type: ClipboardType.phone),
           ),
-          const ProfileCard(
-              icon: Icons.email,
-              title: "ahmed.elshahed.pro@gmail.com"
+          ProfileCard(
+            icon: Icons.email,
+            title: "ahmed.elshahed.pro@gmail.com",
+            onLongPress: ()=>copyToClipboard(context,"ahmed.elshahed.pro@gmail.com",type: ClipboardType.email),
           ),
-          const Spacer(flex: 2,),
+          const Spacer(flex: 2),
         ],
       ),
     );
   }
 }
-

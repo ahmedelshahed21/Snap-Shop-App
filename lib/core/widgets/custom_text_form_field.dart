@@ -33,6 +33,7 @@ class CustomTextField extends StatelessWidget {
           cursorHeight: 28,
           cursorWidth: 2,
           initialValue: initialValue,
+          style: AppStyles.styleMedium16(context).copyWith(color: AppColors.kPriceColor),
           decoration: InputDecoration(
             counterText: '',
             contentPadding:  const EdgeInsets.symmetric(vertical: 16.0, horizontal: 18.0),
@@ -42,7 +43,7 @@ class CustomTextField extends StatelessWidget {
             ),
             suffixIconColor: AppColors.kPrimaryColor,
             hintText: hintText,
-            hintStyle: AppStyles.styleMedium12(context).copyWith(color: AppColors.kPriceColor,fontSize: 16),
+            hintStyle: AppStyles.styleMedium16(context).copyWith(color: AppColors.kPriceColor),
             enabledBorder: buildOutlineInputBorder(),
             focusedBorder: buildOutlineInputBorder(),
           ),

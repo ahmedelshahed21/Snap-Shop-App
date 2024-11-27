@@ -4,12 +4,13 @@ import 'package:snap_shop/core/theme/app_styles.dart';
 
 class ProfileCard extends StatelessWidget {
   const ProfileCard({
-    super.key, required this.icon, required this.title,
+    super.key, required this.icon, required this.title, this.onTap, this.onLongPress,
   });
 
   final IconData icon;
   final String title;
-
+  final void Function()? onTap;
+  final void Function()? onLongPress;
   @override
   Widget build(BuildContext context) {
     return Directionality(
@@ -21,6 +22,8 @@ class ProfileCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
         ),
         child: ListTile(
+          onTap: onTap,
+          onLongPress: onLongPress,
           dense: true,
           leading: Icon(icon,
             size: 28,
